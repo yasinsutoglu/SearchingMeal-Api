@@ -7,11 +7,139 @@
 
     <link rel="stylesheet" href="./style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body>
     
-    
+    <div class="container-fluid meal-container text-center mt-3">
+        <h2 class="mt-3">Search Meals According to Ingredients</h2>
+        <div class="meal-search mt-5 d-flex justify-content-center">
+            <input type="text" id="meal-input" placeholder="Enter an ingredient">
+            <a id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+        <h2 class="result-text" >Your Search Results</h2>
+        <div class="meal-results container ">
+          <div class="row gap-3 justify-content-center">
+            <div class="card col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="https://i.nefisyemektarifleri.com/2019/11/15/patlican-musakka-yapilisi-videolu.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Receipe</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meal Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Category Name</h5>
+                            <h4>Instructions</h4>
+                            <p class="meal-recipe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut maiores iure fugiat ullam, eius architecto sunt consequuntur, dolor magni nostrum ab atque nam. Natus doloremque quas nobis voluptatum quaerat vero.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"><a href="#" class=" text-white watch-this">Watch This</a></button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="https://cdn.ye-mek.net/App_UI/Img/out/650/2022/05/lokanta-usulu-tavuk-sote-resimli-yemek-tarifi(11).jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Receipe</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meal Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Category Name</h5>
+                            <h4>Instructions</h4>
+                            <p class="meal-recipe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut maiores iure fugiat ullam, eius architecto sunt consequuntur, dolor magni nostrum ab atque nam. Natus doloremque quas nobis voluptatum quaerat vero.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"><a href="#" class=" text-white watch-this">Watch This</a></button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Receipe</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meal Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Category Name</h5>
+                            <h4>Instructions</h4>
+                            <p class="meal-recipe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut maiores iure fugiat ullam, eius architecto sunt consequuntur, dolor magni nostrum ab atque nam. Natus doloremque quas nobis voluptatum quaerat vero.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"><a href="#" class=" text-white watch-this">Watch This</a></button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Receipe</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Meal Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Category Name</h5>
+                            <h4>Instructions</h4>
+                            <p class="meal-recipe">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut maiores iure fugiat ullam, eius architecto sunt consequuntur, dolor magni nostrum ab atque nam. Natus doloremque quas nobis voluptatum quaerat vero.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"><a href="#" class=" text-white watch-this">Watch This</a></button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+            
+        </div>
+    </div>
+
+
 
 
 
