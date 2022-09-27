@@ -55,3 +55,49 @@ body{
     height: 200px;
     box-shadow: 3px 3px 5px rgba(8,20,50,0.7);
 }
+
+
+.modal-content{
+    background-color: #afb1ab !important;
+
+}
+
+.modal-body h5{
+    display: inline-block;
+    width: 15rem;
+    background-color: white;
+    color:#afb1ab;
+    margin: 1rem auto ;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+
+.modal-title{
+    display: inline-block;
+    padding-left: 1.5rem;
+    width: 90%;
+    margin:1rem auto;
+    font-size: 1.5rem;
+    text-align: center;
+    word-spacing: 0.2rem;
+}
+
+.btn {
+    box-shadow: 3px 3px 5px rgba(8,20,50,0.7);
+}
+
+.meal-recipe{
+    height: 30vh;
+    overflow-y: auto;
+}
+
+.img-circle img{
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.modal-footer .btn{
+    margin:1rem auto;
+}
+
