@@ -40,7 +40,7 @@ const renderMeals = (data)=>{
                     <div class="card-body">
                         <h5 class="card-title">${strMeal}</h5>                    
                         
-                        <button type="button" class="btn btn-danger mt-2 w-50 " data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="${idMeal}">Recipe</button>
+                        <button type="button" class="btn btn-danger mt-2 w-50" id="${idMeal}">Recipe</button>
                     </div>
 
                 </div>`;
@@ -54,6 +54,7 @@ const renderMeals = (data)=>{
     })    
 }
 
+//FETCH DETAILS FUNCTION
 const fetchDetails = async function(id){
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
 
@@ -64,29 +65,36 @@ const fetchDetails = async function(id){
         }
         const myData = await res.json();
         renderDetails(myData)
+    }catch(err){
+        console.log(err)
     }
-    catch(error) {
-        console.log(error) //!EN SON BAK
-    }   
+   
 }
 
+//RENDER DETAILS FUNCTION
 const renderDetails = function(data){
+ console.log("RENDERDETAILS:", data.meals[0])
 
- console.log(data.meals[0])
+const modalWindow = document.querySelector(".mWind");
+modalWindow.classList.remove("d-none")
 
-const mealName = document.querySelector(".modal-title")
-mealName.textContent = `${data.meals[0].strMeal}`; 
-
-const categoryName = document.querySelector(".category-name")
-categoryName.textContent = `${data.meals[0].strCategory}`;
-
-const mealInstructions = document.querySelector(".meal-recipe");
-mealInstructions.textContent = `${data.meals[0].strInstructions}`;
-
-const mealImage = document.querySelector(".img-circle img")
-mealImage.src = `${data.meals[0].strMealThumb}`;
-
-const btnYoutube = document.querySelector(".modal-footer button a");
-btnYoutube.href = `${data.meals[0].strYoutube}`;
-
+document.querySelector(".m-title").innerText = `${data.meals[0].strMeal}`; 
+document.querySelector(".category-name").innerText = `${data.meals[0].strCategory}`; 
+document.querySelector(".meal-recipe").innerText = `${data.meals[0].strInstructions}`;
+document.querySelector(".img-circle img").src = `${data.meals[0].strMealThumb}`;
+document.querySelector(".watch-this").href = `${data.meals[0].strYoutube}`;
+            
 }
+
+// CLOSEING-MODAL
+const mealContainer = document.querySelector(".meal-container")
+
+ mealContainer.addEventListener("click", (e) => {
+//    e.preventDefault();
+   if (e.target.classList.contains("btn-close")) {
+     console.log(e.target);
+     e.target.parentElement.parentElement.classList.add("d-none");
+   }
+ });
+
+   

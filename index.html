@@ -21,42 +21,60 @@
         </div>
         <h2 class="result-text" >Your Search Results</h2>
 
-        <div class="meal-results container ">
-          <div class="row gap-3 justify-content-center">
+        <div class="meal-results container meal-container ">
+          <div class="row gap-3 justify-content-center align-items-center">
 
-                <!-- <div class="card col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
+         <!-- <div class="card col-md-6 col-lg-4 col-xl-3" style="width: 18rem;">
                     <img src="https://cdn.ye-mek.net/App_UI/Img/out/650/2022/05/lokanta-usulu-tavuk-sote-resimli-yemek-tarifi(11).jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>                    
-                        <button type="button" class="btn btn-danger mt-2 w-50 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Recipe</button>
+                        <button type="button" class="btn btn-danger mt-2 w-50 " data-bs-toggle="modal" data-bs-target="#modalID">Recipe</button>
 
                         
                     </div>
-                </div> -->
+                </div>  -->
 
                 <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <!-- <div class="modal fade" id="modalID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                                <h5 class="modal-title" id="staticBackdropLabel">${data.meals[0].strMeal}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <h5 class="category-name"></h5>
+                                <h5 class="category-name">${data.meals[0].strCategory}</h5>
                                 <h4>Instructions</h4>
-                                <p class="meal-recipe"></p>
-                                <div class="img-circle"><img src="" alt=""></div>
+                                <p class="meal-recipe">${data.meals[0].strInstructions}</p>
+                                <div class="img-circle"><img src="${data.meals[0].strMealThumb}" alt=""></div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary"><a href="" target="_blank" class=" text-white watch-this">Watch This</a></button>
+                                <button type="submit" class="btn btn-primary"><a href="${data.meals[0].strYoutube}" target="_blank" class=" text-white watch-this">Watch This</a></button>
                             </div>
                             </div>
                         </div>
-                        </div>
-
+                    </div>  -->
             </div>
         </div>
+
+        <div class="mWind d-none">
+                    <div class="m-header">
+                         <h3 class="m-title mt-3 text-center"></h3>
+                         <button type="button" class="btn-close"></button>
+                    </div>
+                    <hr>
+                    <div class="m-body">
+                        <h2 class="category-name"></h2>
+                        <h3>Instructions</h3>
+                        <p class="meal-recipe"></p>
+                        <div class="img-circle"><img src="" alt=""></div>        
+                    </div>
+                    <hr>
+                    <div class="m-footer">
+                        <a href="" target="_blank" class="btn btn-primary text-white watch-this">Watch This</a>
+                    </div>
+            </div> 
+
     </div>         
                 
             
@@ -65,7 +83,8 @@
 
 
 
-    <script src="./app.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>    
+    <script src="./app.js"></script>
   </body>
 </html>

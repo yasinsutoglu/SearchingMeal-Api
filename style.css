@@ -57,7 +57,7 @@ body{
 }
 
 
-.modal-content{
+/* .modal-content{
     background-color: #afb1ab !important;
 
 }
@@ -80,7 +80,7 @@ body{
     font-size: 1.5rem;
     text-align: center;
     word-spacing: 0.2rem;
-}
+} */
 
 .btn {
     box-shadow: 3px 3px 5px rgba(8,20,50,0.7);
@@ -97,7 +97,59 @@ body{
     border-radius: 50%;
 }
 
-.modal-footer .btn{
+.m-footer .btn{
     margin:1rem auto;
 }
 
+.mWind{
+    background-color: #bfd493;
+    width:50%;
+    border-radius: 20px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.m-header{
+    position: relative;
+}
+
+.m-header button{
+    position: absolute;
+    top:3px;
+    right:3px;
+}
+
+.m-body{
+    overflow: auto;
+}
+
+.m-body h5{
+    margin-top: 1rem;
+}
+
+.m-footer a{
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width:750px) {
+     #meal-input::placeholder{
+    font-size: 1rem;
+    }
+     #meal-input{
+        padding: 0 3px;
+     }
+}
+
+@media screen and (max-width:610px) {
+     #meal-input::placeholder{
+    font-size: 0.7rem;
+    }
+
+    .mWind{
+        width:80%;
+    }
+}
