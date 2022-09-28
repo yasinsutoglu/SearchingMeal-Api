@@ -59,29 +59,34 @@ const fetchDetails = async function(id){
 
     try {
         const res = await fetch(url);
-        const data = await res.json();
-        renderDetails(data)
-    } catch (error) {
+        if(!res.ok){
+            throw new Error("something went wrong")
+        }
+        const myData = await res.json();
+        renderDetails(myData)
+    }
+    catch(error) {
         console.log(error) //!EN SON BAK
     }   
 }
 
 const renderDetails = function(data){
-       // console.log(data.meals[0])
+
+ console.log(data.meals[0])
 
 const mealName = document.querySelector(".modal-title")
-mealName.innerText = `${data.meals[0].strMeal}`; 
+mealName.textContent = `${data.meals[0].strMeal}`; 
 
 const categoryName = document.querySelector(".category-name")
-categoryName.innerText = `${data.meals[0].strCategory}`;
+categoryName.textContent = `${data.meals[0].strCategory}`;
 
 const mealInstructions = document.querySelector(".meal-recipe");
-mealInstructions.innerText = `${data.meals[0].strInstructions}`;
+mealInstructions.textContent = `${data.meals[0].strInstructions}`;
 
 const mealImage = document.querySelector(".img-circle img")
 mealImage.src = `${data.meals[0].strMealThumb}`;
 
-const btnYoutube = document.querySelector(".modal-footer a");
+const btnYoutube = document.querySelector(".modal-footer button a");
 btnYoutube.href = `${data.meals[0].strYoutube}`;
 
 }
