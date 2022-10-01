@@ -2,6 +2,9 @@ const mealInput = document.querySelector("#meal-input");
 const mealSearchBtn = document.querySelector("#search-btn");
 const resultMsg = document.querySelector(".result-text");
 
+const colorArr = ["red", "white" , "blue"]
+let i=0;
+
 
 mealSearchBtn.addEventListener("click" , ()=>{
     
@@ -36,10 +39,21 @@ function fetchMeal(ingName){
 const renderMeals = (data)=>{
     console.log(data)
     if(data.meals == null){
-        resultMsg.innerText = `Your meals could not be found`
+        const intervalId = setInterval(()=>{
+            resultMsg.innerText = `Your meals could not be found`;
+                if(i>2){
+                    i=0;
+                    resultMsg.style.color = colorArr[i];
+                }else{                    
+                    i++;  
+                    resultMsg.style.color = colorArr[i]; 
+                }
+        },1000)
         setTimeout(()=>{
+            clearInterval(intervalId)
+            resultMsg.style.color= "black"
             resultMsg.innerText = `Your Search Results:`;
-        },3000)
+        },5000)
         return;
     }
     const mealResults = document.querySelector(".row");
