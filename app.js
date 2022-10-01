@@ -1,27 +1,32 @@
 const mealInput = document.querySelector("#meal-input");
 const mealSearchBtn = document.querySelector("#search-btn");
+const resultMsg = document.querySelector(".result-text");
 
 
 mealSearchBtn.addEventListener("click" , ()=>{
-    const mealResults = document.querySelector(".row");
-    mealResults.innerHTML = "";
-
+    
     if (!mealInput.value) {
-    alert("Please enter an ingredient");
+        resultMsg.innerText = `Please Enter an Ingredient`;
+        setTimeout(() => {
+          resultMsg.innerText = `Your Search Results:`;
+        }, 3000);
     }else{
-        fetchMeal(mealInput.value);
+        const mealResults = document.querySelector(".row");
+        mealResults.innerHTML = "";
+        fetchMeal(mealInput.value);         
     }
 
-    mealInput.value="";
-
+    mealInput.value = "";
 })
 
 
 function fetchMeal(ingName){
+
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingName}`).then(res =>{
+
         console.log(res)
         if(!res.ok){
-            // fetchError(); //!UNUTMA
+            resultMsg.innerText = `FETCH PROCESS IS NOT VALID` 
             throw new Error("Meal could not be fetched")
         }
         return res.json();
@@ -29,7 +34,14 @@ function fetchMeal(ingName){
 }
 
 const renderMeals = (data)=>{
-    console.log(data.meals)
+    console.log(data)
+    if(data.meals == null){
+        resultMsg.innerText = `Your meals could not be found`
+        setTimeout(()=>{
+            resultMsg.innerText = `Your Search Results:`;
+        },3000)
+        return;
+    }
     const mealResults = document.querySelector(".row");
 
     data.meals.forEach(meal => {
@@ -47,7 +59,7 @@ const renderMeals = (data)=>{
     });
 
     mealResults.addEventListener("click" , (e)=>{
-        e.preventDefault();
+        // e.preventDefault();
         if(e.target.classList.contains("btn")){
             fetchDetails(e.target.id);
         }
@@ -61,6 +73,8 @@ const fetchDetails = async function(id){
     try {
         const res = await fetch(url);
         if(!res.ok){
+            resultMsg.innerText = `DETAILS FETCHING PROCESS IS NOT VALID`;
+           document.querySelector(".row").classList.add("d-none");
             throw new Error("something went wrong")
         }
         const myData = await res.json();
@@ -73,6 +87,7 @@ const fetchDetails = async function(id){
 
 //RENDER DETAILS FUNCTION
 const renderDetails = function(data){
+ console.log(data)
  console.log("RENDERDETAILS:", data.meals[0])
 
 const modalWindow = document.querySelector(".mWind");
@@ -97,4 +112,8 @@ const mealContainer = document.querySelector(".meal-container")
    }
  });
 
+
+ window.addEventListener("load", ()=>{
+    mealInput.focus();
+ })
    
